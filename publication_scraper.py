@@ -11,7 +11,7 @@ token = 'your token here'
 affil = 'your department here'
 
 # Enter output path
-outpath = '/output/path'
+outpath = '/output/path/here'
 
 # Number of papers to return
 num = 5
@@ -20,6 +20,7 @@ num = 5
 maxauth = 5
 
 import ads
+import codecs
 import datetime
 import unidecode
 import requests
@@ -58,13 +59,12 @@ for n,paper in enumerate(papers):
 
 # Now write output to WWW
 
-f = open(outpath+"/publication_list.html","w")
+f = codecs.open(outpath+"/publication_list.html",'w','utf-8')
 
 f.write('<h3>Recent '+affil+' Publications</h3>'+'\n')
 for n in range(num):
-     f.write(str(n+1)+'. '+finalstr[n]+'\n')
-
+    f.write(str(n+1)+'. '+finalstr[n]+'\n')
+      
 f.write('<p><a href="https://ui.adsabs.harvard.edu/#search/q=aff%3A%22'+affil+'%22&sort=date%20desc" target="_blank">Complete list >></a></p>')
 f.close()
-
 
