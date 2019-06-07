@@ -1,5 +1,6 @@
 # dunlap_publications
-Code to identify recent Dunlap publications, highlight Dunlap authors, and post to an HTML page
+Code to identify recent publications from a given institute or department, 
+highlight authors from that department, and post to an HTML page
 
 dunlap_publication_scraper.py: Python code
 
