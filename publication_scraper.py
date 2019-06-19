@@ -31,7 +31,13 @@ from itertools import groupby
 # Uses https://ads.readthedocs.io/en/latest/
 
 ads.config.token = token
+
+# All papers associated with affil
 papers = list(ads.SearchQuery(q="aff:"+affil, sort="pubdate", rows=num))
+
+# Only first author papers associated wiht affil
+#papers = list(ads.SearchQuery(q="pos(aff:\""+affil+"\",1)", sort="pubdate", rows=num))
+
 
 
 authstr = ['' for x in range(num)]
@@ -65,6 +71,11 @@ f.write('<h3>Recent '+affil+' Publications</h3>'+'\n')
 for n in range(num):
     f.write(str(n+1)+'. '+finalstr[n]+'\n')
       
+# All papers associated with affil
 f.write('<p><a href="https://ui.adsabs.harvard.edu/#search/q=aff%3A%22'+affil+'%22&sort=date%20desc" target="_blank">Complete list >></a></p>')
+
+# Only first author papers associated wiht affil
+#f.write('<p><a href="https://ui.adsabs.harvard.edu/search/q=pos(aff%3A%22'+affil+'%22%2C1)&sort=date%20desc%2C%20bibcode%20desc" target="_blank">Complete list >></a></p>')
+
 f.close()
 
