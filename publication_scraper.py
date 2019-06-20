@@ -38,8 +38,6 @@ papers = list(ads.SearchQuery(q="aff:"+affil, sort="pubdate", rows=num))
 # Only first author papers associated wiht affil
 #papers = list(ads.SearchQuery(q="pos(aff:\""+affil+"\",1)", sort="pubdate", rows=num))
 
-
-
 authstr = ['' for x in range(num)]
 pdate = ['' for x in range(num)]
 title = ['' for x in range(num)]
@@ -74,7 +72,7 @@ for n in range(num):
 # All papers associated with affil
 f.write('<p><a href="https://ui.adsabs.harvard.edu/#search/q=aff%3A%22'+affil+'%22&sort=date%20desc" target="_blank">Complete list >></a></p>')
 
-# Only first author papers associated wiht affil
+# Only first author papers associated with affil
 #f.write('<p><a href="https://ui.adsabs.harvard.edu/search/q=pos(aff%3A%22'+affil+'%22%2C1)&sort=date%20desc%2C%20bibcode%20desc" target="_blank">Complete list >></a></p>')
 
 f.close()
