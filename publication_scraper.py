@@ -11,7 +11,7 @@ token = 'your token here'
 affil = 'your department here'
 
 # Enter output path
-outpath = '/output/path/here'
+outpath = '/output/path/here/publications.html'
 
 # Number of papers to return
 num = 5
@@ -67,7 +67,7 @@ for n,paper in enumerate(papers):
 
 # Now write output to WWW
 
-f = codecs.open(outpath+"/publication_list.html",'w','utf-8')
+f = codecs.open(outpath,'w','utf-8')
 
 f.write('<h3>Recent '+affil+' Publications</h3>'+'\n')
 for n in range(num):
