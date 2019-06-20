@@ -69,7 +69,8 @@ for n,paper in enumerate(papers):
 
 f = codecs.open(outpath,'w','utf-8')
 
-f.write('<h3>Recent '+affil+' Publications</h3>'+'\n')
+f.write('<h3>Recent '+affil+' Publications ('+datetime.datetime.now().strftime("%b %d, %Y")+')</h3>'+'\n') 
+
 for n in range(num):
     f.write(str(n+1)+'. '+finalstr[n]+'\n')
       
