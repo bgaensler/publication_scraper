@@ -55,7 +55,11 @@ for n,paper in enumerate(papers):
 #   Eliminate multiple ellipses
     authstr[n] = ", ".join([x[0] for x in groupby(paper.author)])
     
-    pdate[n] = datetime.datetime.strptime(paper.pubdate[0:7], "%Y-%m").strftime('%b %Y')
+#   Format date correctly, even if in the form 2019-00
+    try:
+        pdate[n] = datetime.datetime.strptime(paper.pubdate[0:7], "%Y-%m").strftime('%b %Y')
+    except:
+        pdate[n] = datetime.datetime.strptime(paper.pubdate[0:7], "%Y-%m").strftime('%Y')
     title[n] = unidecode.unidecode(paper.title[0])
     bib[n] = paper.bibcode 
     finalstr[n] = '<a href="https://ui.adsabs.harvard.edu/abs/'+bib[n]+'" target="_blank">'+authstr[n]+', '+title[n]+', '+pdate[n]+'</a> <p>'
