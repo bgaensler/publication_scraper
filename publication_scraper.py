@@ -3,6 +3,9 @@
 # Code to automatically scrape ADS, and identify recent Dunlap publications and highlight authors.
 # Written by Bryan Gaensler for Dunlap Hack Day, 4 June 2019
 
+import warnings
+warnings.filterwarnings("ignore")
+
 # Enter your ADS token here
 # See https://github.com/adsabs/adsabs-dev-api#access
 token = 'your token here'
