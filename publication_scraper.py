@@ -36,10 +36,10 @@ from itertools import groupby
 ads.config.token = token
 
 # All papers associated with affil
-papers = list(ads.SearchQuery(q="aff:"+affil, sort="pubdate", rows=num))
+papers = list(ads.SearchQuery(q="aff:"+affil, sort="date desc, bibcode desc", rows=num))
 
-# Only first author papers associated wiht affil
-#papers = list(ads.SearchQuery(q="pos(aff:\""+affil+"\",1)", sort="pubdate", rows=num))
+# Only first author papers associated with affil
+#papers = list(ads.SearchQuery(q="pos(aff:\""+affil+"\",1)", sort="date desc, bibcode desc", rows=num))
 
 authstr = ['' for x in range(num)]
 pdate = ['' for x in range(num)]
