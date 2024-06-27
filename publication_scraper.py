@@ -29,6 +29,8 @@ import unidecode
 import requests
 from itertools import groupby
 
+import html.entities
+table = {k: '&{};'.format(v) for k, v in html.entities.codepoint2name.items()}
 
 # Query ADS
 # Uses https://ads.readthedocs.io/en/latest/
@@ -49,6 +51,8 @@ finalstr = ['' for x in range(num)]
 
 for n,paper in enumerate(papers):
     for i in range(len(paper.author)):
+        # Fix accents
+        paper.author[i] = paper.author[i].translate(table)
         # Make authors in bold
         if affil in paper.aff[i]:
             paper.author[i] = "<strong>"+paper.author[i]+"</strong>"
