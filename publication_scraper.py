@@ -17,7 +17,7 @@ affil = 'your department here'
 outpath = '/output/path/here/publications.html'
 
 # Number of papers to return
-num = 5
+num = 20
 
 # Max number of authors to list explicitly
 maxauth = 5
